@@ -5,10 +5,8 @@ package wasi:http;
 /// this world may concurrently stream in and out any number of incoming and
 /// outgoing HTTP requests.
 world proxy {
-  /// HTTP proxies have access to time and randomness.
-  import wasi:clocks/wall-clock;
-  import wasi:clocks/monotonic-clock;
-  import wasi:clocks/timezone;
+  // HTTP proxies have access to time and randomness.
+  include wasi:clocks/imports;
   import wasi:random/random;
 
   /// Proxies have standard output and error streams which are expected to
